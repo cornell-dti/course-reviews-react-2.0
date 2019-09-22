@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import Login      from '../imports/ui/Login.jsx';
 import ClassView  from '../imports/ui/ClassView.jsx';
 import App       from '../imports/ui/App.jsx';
+import CustomSearch from '../imports/ui/CustomSearch.jsx';
 
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -23,6 +24,7 @@ Meteor.startup(() => {
                 <Route name="app" exact path="/" component={ App } />
                 <Route name="admin" exact path="/admin" component={ Login } />
                 <Route name="permalink" exact path="/course/:subject/:number" component={ ClassView } />
+                <Route name="metriclink" exact path="/results/diff=:difficulty/work=:workload/rating=:rating/prof=:professor"component={CustomSearch} />
             </div>
         </BrowserRouter>,
         document.getElementById('render-target')
