@@ -23,7 +23,12 @@ Classes.schema = new SimpleSchema({
     crossList: { type: [String], optional: true }, // list of classes that are crosslisted with this one, a string of Classes _id.
     classFull: { type: String }, // full class title to search by, formated as 'classSub classNum: classTitle'
     classSems: { type: [String] }, // list of semesters this class was offered, like ['FA17', 'FA16']
-    classProfessors: { type: [String] } //list of professors that have taught the course over past semesters
+    classProfessors: { type: [String] }, //list of professors that have taught the course over past semesters
+    classRating: {type: Number}, // the average class rating from reviews
+    classWorkload: {type: Number}, // the average workload rating from reviews
+    classDifficulty: {type: Number}, // the average difficulty rating from reviews
+    classGrade: {type: Number} // the average grade from reviews
+
 });
 
 /* # Users collection.
@@ -71,10 +76,6 @@ Reviews.schema = new SimpleSchema({
     reported: { type: Number }, // reported flag - 1 if review was reported, 0 otherwise
     professors: { type: [String] }, //list of professors that have thought the course over past semesters
     likes: { type: Number, min: 0 }, //number of likes a review has
-    // The following was a temporary field used to keep track of reviews for a contest
-    // The full functional code for counting reviews can be found on the following branch:
-    // review-counting-feature
-    // memberReferral: { type: String, optional: true }, // DTI member referral for review contest
 });
 
 /* # Validation Collection.

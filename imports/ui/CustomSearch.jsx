@@ -11,8 +11,10 @@ export default class CustomSearch extends Component{
         const workload=this.props.match.params.workload;
         const rating=this.props.match.params.rating;
         const professor=this.props.match.params.professor;
-
+        const grade=this.props.match.params.grade;
+        this.componentDidMount=this.componentDidMount.bind(this);
         this.state ={
+            grade:grade,
             difficulty:difficulty,
             workload:workload,
             rating:rating,
@@ -20,10 +22,27 @@ export default class CustomSearch extends Component{
         }
     }
 
+    // Get courses that satisfy URL parameters
+    componentDidMount(){
+        var parameters={
+            classProfessors:this.state.professor,
+            classRating:{$gte:this.state.rating},
+            classWorkload:{$lte:this.state.rating},
+            classDifficulty:{$lte:this.state.difficulty},
+            classGrade:{$gte:this.state.grade}
+        };
+        Meteor.call('getCourseByFilters', parameters, (error, res)=>{
+            if(!error){
+                this.setState({results:res});
+            }
+        });
+    }
+
+
     render(){
        
         return(
-             <div>{this.state.difficulty}+" "+{this.state.workload}</div>);
+             <div>{this.state.results}</div>);
 
     }
 }
