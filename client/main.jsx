@@ -24,7 +24,7 @@ Meteor.startup(() => {
                 <Route name="app" exact path="/" component={ App } />
                 <Route name="admin" exact path="/admin" component={ Login } />
                 <Route name="permalink" exact path="/course/:subject/:number" component={ ClassView } />
-                <Route name="metriclink" exact path="/results/diff=:difficulty/work=:workload/rating=:rating/prof=:professor"component={CustomSearch} />
+                <Route name="metriclink" exact path="/results/:difficulty/:workload/:rating/:professor"component={CustomSearch} />
             </div>
         </BrowserRouter>,
         document.getElementById('render-target')

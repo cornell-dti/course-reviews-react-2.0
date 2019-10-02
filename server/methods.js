@@ -143,9 +143,7 @@ Meteor.methods({
   // This updates the metrics for an individual class given its Mongo-generated id. 
   // Returns 1 if successful, 0 otherwise.
   updateCourseMetrics : function (courseId){
-      var
-
-    var course = Meteor.call('getCourseById', courseId)
+    var course = Meteor.call('getCourseById', courseId);
     if(course){
         var reviews=Reviews.find({class: courseId }).fetch();
         var state=getGaugeValues(reviews);
@@ -181,7 +179,7 @@ Meteor.methods({
     getCoursesByFilters: function(parameters){
       var courses=[];
       var regex = new RegExp(/^(?=.*[A-Z0-9])/i);
-      for(var key in dict){
+      for(var key in parameters){
         if(!regex.test(key) || regex.test(parameters[key])) return courses;
       }
       courses=Classes.find(parameters).fetch();

@@ -101,6 +101,8 @@ export class SearchBar extends Component {
   // to that class's ClassView. The name of the class will have underline and bold
   // where it matches the query.
   renderCourses() {
+
+
     if (this.props.query !== "") {
       return this.props.allCourses.slice(0,100).map((course, i) => (
         //create a new class "button" that will set the selected class to this class when it is clicked.
