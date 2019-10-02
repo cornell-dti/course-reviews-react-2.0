@@ -27,10 +27,11 @@ export default class CustomSearch extends Component{
         var parameters={
             // classProfessors:this.state.professor,
             classRating:{$gte:this.state.rating},
-            classWorkload:{$lte:this.state.rating},
+            classWorkload:{$lte:this.state.workload},
             classDifficulty:{$lte:this.state.difficulty},
             // classGrade:{$gte:this.state.grade}
         };
+        
         Meteor.call('getCoursesByFilters', parameters, (error, res)=>{
             if(!error){
                 this.setState({results:res});
