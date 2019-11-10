@@ -98,16 +98,34 @@ export function addAllCourses(semesters) {
     return 1;
 }
 
+const semesterComparator = function(sem1, sem2){
+  let year1 = Number(sem1.substring(2));
+  let year2 = Number (sem2.substring(2));
+  if(year1!=year2) return year2-year1;
+  else{
+    let semDict={
+      "WI":0,
+      "SP":1,
+      "SU":2,
+      "FA":3
+    }
+    let term1=sem1.substring(0,2);
+    let term2=sem2.substring(0,2);
+    return semDict[term1]-semDict[term2];
+  }
+}
 
 export function updateProfessors (semesters){
   //You just want to go through all the classes in the Classes database and update the Professors field
   //Don't want to go through the semesters
   //Might want a helper function that returns that professors for you
     console.log("In updateProfessors method")
+    semesters.sort(semesterComparator);
     semesterLoop:
-     for (const semester in semesters) {
+     for (let i=0; i<3; i++) {
+        const semester = semesters[i];
         //get all classes in this semester
-        console.log("https://classes.cornell.edu/api/2.0/config/subjects.json?roster=" + semesters[semester])
+        console.log(semester);
         try{
           HTTP.call("GET", "https://classes.cornell.edu/api/2.0/config/subjects.json?roster=" + semesters[semester], {timeout: 30000});
         }
