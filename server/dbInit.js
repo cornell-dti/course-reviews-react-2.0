@@ -111,7 +111,7 @@ const semesterComparator = function(sem1, sem2){
     }
     let term1=sem1.substring(0,2);
     let term2=sem2.substring(0,2);
-    return semDict[term1]-semDict[term2];
+    return semDict[term2]-semDict[term1];
   }
 }
 
