@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Session } from '../meteor-session';
-import { Meteor } from '../meteor-shim';
 import Course from './Course';
 import Subject from './Subject';
 import Professor from './Professor';
@@ -237,7 +236,7 @@ export default class SearchBar extends Component {
   renderResults() {
     //Used to start the timer "popup_timer" to display a popup after 30 seconds post-search
     //See ClassView.jsx: decidePopup function
-    if (Session.get("seen_popup") === undefined || Session.get("seen_popup") == "") {
+    if (Session.get("seen_popup") === undefined || Session.get("seen_popup") === "") {
       Session.setPersistent({ "popup_timer": new Date().getTime() });
     }
 

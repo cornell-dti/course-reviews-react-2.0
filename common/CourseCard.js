@@ -14,6 +14,8 @@ function semAbbriviationToWord(sem) {
       return 'Summer';
     case 'WI':
       return 'Winter';
+    default:
+      return '';
   }
 }
 

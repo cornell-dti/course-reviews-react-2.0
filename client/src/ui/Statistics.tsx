@@ -88,9 +88,9 @@ export default class Statistics extends Component<Props, State>{
 
   getReviewsPerClassCSV() {
     let strRet = "class,total\n";
-    this.state.howManyReviewsEachClass.map((obj) => {
-      strRet += obj._id + "," + obj.total + "\n";
-    });
+    this.state.howManyReviewsEachClass.map((obj) => 
+      (strRet += obj._id + "," + obj.total + "\n")
+    );
     return strRet;
   }
 
