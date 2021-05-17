@@ -1,6 +1,6 @@
 /* Searchbar Normal (Non-Popup) */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 992px) {
   .searchbar {
     height: 42px;
   }
@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 993px) {
 
   .searchbar {
     height: 40px;

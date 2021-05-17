@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 993px) {
   .review-number-text, .review-number-text-preview{
     font-weight: bold;
     padding-left: 2vw;

@@ -96,7 +96,7 @@ export default class Review extends Component {
   }
 
   review_styling = (rev, number_label_class, number_text_class) => {
-    if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) < 992) {
+    if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) < 993) {
       return (
         <div className="col-xl-2 col-lg-3 col-md-4 col-sm-12 review-labels-container noLeftRightPadding">
 

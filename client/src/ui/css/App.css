@@ -10,7 +10,7 @@
   margin-bottom: 25px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 993px) {
   .homepage-text {
     font-size: 24px;
   }
@@ -24,7 +24,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .homepage-text {
     font-size: 18px;
   }

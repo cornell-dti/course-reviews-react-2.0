@@ -1,5 +1,5 @@
 /* desktop*/
-@media (min-width: 1000px) {
+@media (min-width: 993px) {
   .result-card {
     margin: 32px 0;
   }
@@ -9,7 +9,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .result-card {
     margin: 16px 0;
   }

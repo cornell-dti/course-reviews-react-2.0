@@ -1,5 +1,5 @@
 /*desktop*/
-@media (min-width: 1000px) {
+@media (min-width: 993px) {
   .gauge-text-top-preview {
     font-size: 50px;
     text-align: center;
@@ -108,7 +108,7 @@
   padding-right: 0;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .gauge-text-top-preview {
     text-align: center;
     font-family: Roboto;
@@ -128,4 +128,10 @@
     text-align: center;
     color: #000000;
   }
+}
+
+.CircularProgressbar {
+  width: 100%;
+  vertical-align: middle;
+  max-height: 11vw;
 }
